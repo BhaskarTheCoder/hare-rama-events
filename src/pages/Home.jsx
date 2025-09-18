@@ -28,12 +28,12 @@ const services = [
     delivery: "Local delivery available",
   },
   {
-    image: "/images/home/venue.png",
+    image: "/images/home/Venue.png",
     name: "Venue Decoration",
     delivery: "On-site setup",
   },
   {
-    image: "/images/home/sweet16.png",
+    image: "/images/home/Sweet16.png",
     name: "Sweet 16 Planning",
     delivery: "On-site setup",
   },
