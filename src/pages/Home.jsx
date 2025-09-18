@@ -23,7 +23,7 @@ const services = [
     delivery: "Customizable packages",
   },
   {
-    image: "/images/home/birthday.png",
+    image: "/images/home/Birthday.png",
     name: "Birthday Parties",
     delivery: "Local delivery available",
   },
