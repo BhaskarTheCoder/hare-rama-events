@@ -47,6 +47,11 @@ body {
   display: flex;
   align-items: center;
 }
+.logo-link a{
+  pointer-events: none;  /* Prevent clicking, hovering, etc. */
+  opacity: 0;          /* Make it look faded */
+  cursor: not-allowed; 
+}
 
 .logo-image {
   height: 70px; /* Adjust size as needed */
@@ -183,7 +188,12 @@ a.glowing-phone{
   font-weight: 700;
   background-color: var(--primary-color);
 }
- 
+ .logo-link a{
+  pointer-events: all;  /* Prevent clicking, hovering, etc. */
+  opacity: 1;          /* Make it look faded */
+  cursor: auto; 
+}
+
 .glowing-phone {
   color: var(--primary-color);
   font-weight: 700;
@@ -194,8 +204,60 @@ a.glowing-phone{
   border-radius: 5px;
   transition: all 0.3s ease;
   animation: pulse-border 0.5s infinite ease-in-out;
+  
 }
 
+@keyframes pulse-border {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(221, 34, 34, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(221, 34, 34, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(221, 34, 34, 0);
+  }
+}
+
+/* === Default: hidden on desktop === */
+.logo-link .glowing-phone {
+  display: none;          /* Fully hidden */
+  pointer-events: none;   /* Just in case */
+}
+/* === Mobile: show + enable glowing phone === */
+@media (max-width: 768px) {
+  .logo-link .glowing-phone {
+    display: inline-block;  /* Show it */
+    pointer-events: auto;   /* Enable clicking */
+    opacity: 1;             /* Fully visible */
+    cursor: pointer;        /* Normal pointer */
+    animation: pulse-border 0.5s infinite ease-in-out; /* Glowing effect */
+  }
+  .nav-links .glowing-phone {
+   display: none;          /* Fully hidden */
+  pointer-events: none;   /* Just in case */
+}
+}
+
+/* === Glowing Phone Styles === */
+.glowing-phone {
+  color: var(--primary-color);
+  font-weight: 700;
+  text-decoration: none;
+  position: relative;
+  padding: 5px;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  font-size: 10px;
+}
+
+
+
+/* === Pulse Glow === */
 @keyframes pulse-border {
   0% {
     transform: scale(1);

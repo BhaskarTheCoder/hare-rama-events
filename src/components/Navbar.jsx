@@ -45,6 +45,15 @@ export default function Navbar() {
                 className="logo-image"
               />
             </div>
+             <div className="callme">
+              <a
+                href={phoneLink}
+                aria-label="Call us now"
+                className="glowing-phone"
+              >
+               CALL US
+              </a>
+            </div>
           </NavLink>
 
           <button
