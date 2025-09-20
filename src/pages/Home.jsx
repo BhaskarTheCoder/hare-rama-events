@@ -215,15 +215,18 @@ export default function Home() {
       </section>
 
       <section className="inventory-section">
-  <h2>Our Inventory</h2>
+  <h2>Party Rental Inventory</h2>
+  <div className="inventory-services">
+    <div className="service-box">Delivery & Pickup</div>
+    <div className="service-box">Setup & Installation</div>
+    <div className="service-box">Daily Rental Rates</div>
+  </div>
   <div className="inventory-grid">
     {inventory.map((item, index) => (
       <div key={index} className="inventory-card">
         <img src={item.image} alt={item.name} />
         <div className="inventory-info">
           <h3>{item.name}</h3>
-          <p className="inventory-price">{item.price}</p>
-          <p className="inventory-delivery">{item.delivery}</p>
         </div>
       </div>
     ))}

@@ -263,9 +263,32 @@ section {
 .inventory-section h2 {
   font-size: 2rem;
   color: var(--secondary-color);
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   text-align: center;
-  
+}
+
+.inventory-services {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.service-box {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.service-box:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Grid layout */
@@ -444,6 +467,15 @@ section {
 
   .services-section h2, .inventory-section h2, .contact-section h2 {
     font-size: 1.5rem; /* Smaller section headings */
+  }
+
+  .inventory-services {
+    gap: 10px;
+  }
+
+  .service-box {
+    font-size: 1rem;
+    padding: 10px 16px;
   }
 
   .services-grid, .inventory-grid {
