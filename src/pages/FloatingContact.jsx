@@ -1,6 +1,6 @@
 import React from "react";
 import { FaPhone, FaWhatsapp, FaInstagram } from "react-icons/fa";
-import "../styles/FloatingContact.css";
+import "../styles/FloatingContact.css"; // Ensure you have the CSS file for styling
 
 export default function FloatingContact() {
   const phoneNumber = "+19496076318";

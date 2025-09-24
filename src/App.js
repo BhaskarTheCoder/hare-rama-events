@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import FloatingContact from "./components/FloatingContact";
+import Navbar from "./pages/Navbar";
+import FloatingContact from "./pages/FloatingContact";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
