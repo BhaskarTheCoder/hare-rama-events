@@ -1,62 +1,314 @@
-.under-construction {
+/* ============================================
+   Services Page - Clean & Organized
+   ============================================ */
+
+.services-page-full {
+  min-height: 100vh;
+  background: #FFFFFF;
+}
+
+/* Hero Section */
+.services-hero-full {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  padding: 80px 20px;
+}
+
+.services-hero-content {
   text-align: center;
-  color: red;
-  font-size: 2.5rem;
-  animation: pulse 1.5s infinite;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 0.7;
-  }
-}
-
-/* 
-/* .services {
-  background: #000; 
-  padding: 50px 20px;
-  text-align: center;
-  color: gold;
-  font-family: 'Cinzel', serif;
-}
-
-.services-title {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-  font-weight: bold;
-  color: gold;
+.services-hero-full h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 20px;
   text-transform: uppercase;
+  letter-spacing: -1px;
 }
 
-.services-grid {
+.services-hero-full p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 30px;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 12px 30px;
+  background: rgba(220, 38, 38, 0.2);
+  border: 2px solid #DC2626;
+  border-radius: 50px;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Services Content */
+.services-content-full {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+/* Service Cards */
+.service-detail-card {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 80px;
+  background: #FFFFFF;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+}
+
+.service-detail-card.right {
+  direction: rtl;
+}
+
+.service-detail-card.right > * {
+  direction: ltr;
+}
+
+/* Image */
+.service-image-container {
+  position: relative;
+  height: 100%;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.service-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: #DC2626;
+  color: #FFFFFF;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Text Content */
+.service-text-content {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
-.service-card {
-  background: #111;
-  border: 2px solid gold;
-  border-radius: 10px;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.service-number {
+  font-size: 80px;
+  font-weight: 900;
+  color: rgba(220, 38, 38, 0.1);
+  line-height: 1;
+  margin-bottom: 20px;
 }
 
-.service-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px gold;
+.service-text-content h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  color: #000000;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  position: relative;
+  padding-top: 15px;
 }
 
-.service-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover; 
-  display: block;
-} 
-*/
+.service-text-content h2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 4px;
+  background: #DC2626;
+}
+
+.service-text-content p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #666666;
+  margin-bottom: 30px;
+}
+
+.service-cta-btn {
+  display: inline-block;
+  padding: 15px 40px;
+  background: #DC2626;
+  color: #FFFFFF;
+  border: 2px solid #DC2626;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.service-cta-btn:hover {
+  background: #000000;
+  border-color: #000000;
+}
+
+/* Philosophy Section */
+.philosophy-section {
+  background: #000000;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.philosophy-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.philosophy-section h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.philosophy-section p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Final CTA */
+.services-final-cta {
+  text-align: center;
+  padding: 80px 20px;
+  background: #FAFAFA;
+}
+
+.services-final-cta h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: #000000;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.services-final-cta p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #666666;
+  margin-bottom: 40px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-primary,
+.cta-secondary {
+  padding: 18px 50px;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid;
+}
+
+.cta-primary {
+  background: #DC2626;
+  color: #FFFFFF;
+  border-color: #DC2626;
+}
+
+.cta-primary:hover {
+  background: #000000;
+  border-color: #000000;
+}
+
+.cta-secondary {
+  background: transparent;
+  color: #000000;
+  border-color: #000000;
+}
+
+.cta-secondary:hover {
+  background: #000000;
+  color: #FFFFFF;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .services-hero-full {
+    min-height: 50vh;
+    padding: 60px 15px;
+  }
+
+  .services-content-full {
+    padding: 60px 15px;
+  }
+
+  .service-detail-card,
+  .service-detail-card.right {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-bottom: 60px;
+    direction: ltr;
+  }
+
+  .service-image-container {
+    min-height: 300px;
+  }
+
+  .service-text-content {
+    padding: 30px 20px;
+  }
+
+  .service-number {
+    font-size: 60px;
+  }
+
+  .service-cta-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .philosophy-section,
+  .services-final-cta {
+    padding: 60px 15px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .cta-primary,
+  .cta-secondary {
+    width: 100%;
+  }
+}

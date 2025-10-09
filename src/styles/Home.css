@@ -27,15 +27,157 @@ section {
 /* 1. Welcome Signal */
 .welcome-section {
   position: relative; /* enable absolute children */
-  background-image: url(../../public/images/home/dj.png);
   color: var(--primary-color);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   margin-bottom: 40px;
-  padding: 100px 20px; /* give more height for overlay */
+  padding: 60px 20px 20px; /* Reduced top padding */
+  overflow: hidden; /* ensure video doesn't overflow */
+  min-height: 500px; /* minimum height for the section */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space out content */
+}
+
+/* Video Background */
+.welcome-section .video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  background: #000; /* Fallback color */
+}
+
+/* Ensure video displays properly */
+.welcome-section .video-background::-webkit-media-controls {
+  display: none !important;
+}
+
+.welcome-section .video-background::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+/* Overlay to darken video for better text readability */
+.welcome-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent overlay */
+  z-index: 1;
+}
+
+/* Ensure content is above video and overlay */
+.welcome-section > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Sound Toggle Button */
+.sound-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #ff0000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: pulse 2s infinite;
+}
+
+.sound-toggle:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4);
+}
+
+.sound-toggle:active {
+  transform: scale(0.95);
+}
+
+.sound-toggle svg {
+  color: #ff0000;
+  width: 28px;
+  height: 28px;
+}
+
+.sound-toggle.unmuted {
+  background: rgba(255, 0, 0, 0.9);
+  border-color: #ffffff;
+  animation: none;
+}
+
+.sound-toggle.unmuted svg {
+  color: #ffffff;
+}
+
+.sound-toggle.unmuted:hover {
+  background: rgba(255, 0, 0, 1);
+}
+
+/* Tooltip */
+.sound-tooltip {
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.sound-toggle:hover .sound-tooltip {
+  opacity: 1;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(255, 0, 0, 0.7);
+  }
+  50% {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 0 0 0 10px rgba(255, 0, 0, 0);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .sound-toggle {
+    width: 50px;
+    height: 50px;
+    top: 15px;
+    right: 15px;
+  }
+
+  .sound-toggle svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .sound-tooltip {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    bottom: -30px;
+  }
 }
 
 .welcome-section h1 {
@@ -43,12 +185,19 @@ section {
   padding: 5px;
   color: var(--secondary-color);
   font-size: 2.5rem;
-  margin-bottom: 200px;
+  margin-bottom: 20px;
   margin-top: 0;
 }
 
+/* Bottom content container */
+.welcome-bottom-content {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 80px; /* Space above history section */
+}
+
 .welcome-section p {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   border-radius: 10px;
   font-size: 1.2rem;
   color: var(--secondary-color);
@@ -168,6 +317,14 @@ section {
 
 /* Responsive tweaks */
 @media (max-width: 768px) {
+  .welcome-section {
+    min-height: 600px; /* Increase height for mobile */
+  }
+
+  .welcome-bottom-content {
+    margin-bottom: 70px; /* Adjust spacing for mobile */
+  }
+
   .history-section {
     gap: 20px;
     padding: 15px 15px;
@@ -421,6 +578,7 @@ section {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 200px);
   }
+
 }
 
 /* **NEW** Mobile-first adjustments for smaller phones (less than 600px) */
