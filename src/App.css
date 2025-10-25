@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400&display=swap');
+/* Heavy Techno Font Stack - Similar to Roc Grotesk Extra Wide Heavy */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Exo+2:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 html, body, #root {
   margin: 0;
@@ -6,4 +7,12 @@ html, body, #root {
   height: 100%;
   width: 100%;
   background-color: white;
+  font-family: 'Rajdhani', 'Orbitron', 'Exo 2', 'Arial Black', 'Impact', 'Helvetica Neue', sans-serif;
+  font-weight: 700;
+}
+
+/* Apply heavy techno fonts to all elements */
+*, *::before, *::after {
+  font-family: 'Rajdhani', 'Orbitron', 'Exo 2', 'Arial Black', 'Impact', 'Helvetica Neue', sans-serif;
+  font-weight: 700;
 }
