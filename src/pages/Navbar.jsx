@@ -146,7 +146,7 @@ export default function Navbar() {
               </a>
               
               <a 
-                href="https://instagram.com/hareramaevents" 
+                href="https://www.instagram.com/hareramaevents_dj_ram/?utm_source=ig_embed&utm_campaign=loading" 
                 className="social-icon instagram-icon"
                 aria-label="Follow us on Instagram"
                 title="Follow us on Instagram"

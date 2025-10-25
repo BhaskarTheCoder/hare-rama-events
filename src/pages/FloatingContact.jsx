@@ -26,7 +26,7 @@ export default function FloatingContact() {
 
       {/* Instagram */}
       <a
-        href="https://www.instagram.com/hareramapartyrentals_dj_decor/?igsh=cXRxbXd1a3d6em5n#"
+        href="https://www.instagram.com/hareramaevents_dj_ram/?utm_source=ig_embed&utm_campaign=loading"
         target="_blank"
         rel="noopener noreferrer"
         className="contact-btn instagram"
