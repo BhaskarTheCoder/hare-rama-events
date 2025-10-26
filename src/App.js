@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Packages from "./pages/Packages";
 import ContactForm from "./pages/ContactForm";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 // === Suppress ResizeObserver loop errors ===
 window.addEventListener("error", (event) => {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/services" element={<Services/>} />
         <Route path="/packages" element={<Packages/>} />
         <Route path="/contact" element={<ContactForm/>} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy/>} />
       </Routes>
       {/* Floating contact buttons */}
       <FloatingContact />

@@ -22,6 +22,7 @@ export default function ContactForm() {
     time: "",
     venue: "",
     message: "",
+    optIn: false,
   });
 
   const [loading, setLoading] = useState(false);
@@ -40,7 +41,8 @@ export default function ContactForm() {
   ];
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
+    setFormData({ ...formData, [e.target.name]: value });
     setErrors({ ...errors, [e.target.name]: "" }); // Clear error on change
   };
 
@@ -55,6 +57,7 @@ export default function ContactForm() {
       newErrors.otherService = "Please specify your service";
     if (!formData.date) newErrors.date = "Select a date";
     if (!formData.time) newErrors.time = "Select a time";
+    if (!formData.optIn) newErrors.optIn = "You must agree to be contacted";
     return newErrors;
   };
 
@@ -85,6 +88,7 @@ export default function ContactForm() {
         time: "",
         venue: "",
         message: "",
+        optIn: false,
       });
     } catch (error) {
       console.error("Error saving contact:", error);
@@ -182,6 +186,28 @@ export default function ContactForm() {
           onChange={handleChange}
           maxLength={500}
         ></textarea>
+
+        <div className="opt-in-container">
+          <label className="opt-in-label">
+            <input
+              type="checkbox"
+              name="optIn"
+              checked={formData.optIn}
+              onChange={handleChange}
+              className="opt-in-checkbox"
+            />
+            <span className="opt-in-text">
+              I agree to be contacted by Hare Rama Events via call, email, and text for event services. 
+              To opt out, you can reply 'stop' at any time or reply 'help' for assistance. 
+              You can also click the unsubscribe link in the emails. 
+              Message and data rates may apply. Message frequency may vary.{" "}
+              <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">
+                View Privacy Policy
+              </a>
+            </span>
+          </label>
+          {errors.optIn && <span className="error">{errors.optIn}</span>}
+        </div>
 
         <button type="submit" disabled={loading}>
           {loading ? "Submitting..." : "Submit"}
