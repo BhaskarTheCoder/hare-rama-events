@@ -1,0 +1,185 @@
+/* ============================================
+   PRIVACY POLICY MODAL STYLES
+   ============================================ */
+
+.privacy-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  padding: var(--space-lg);
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.privacy-container {
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: rgba(15, 13, 25, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-2xl);
+  animation: slideUp 0.3s ease-out;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.privacy-close {
+  position: absolute;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  color: var(--color-text-primary);
+  z-index: 10;
+}
+
+.privacy-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
+}
+
+.privacy-content {
+  padding-right: var(--space-md);
+}
+
+.privacy-content h1 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-3xl);
+  font-weight: 800;
+  margin-bottom: var(--space md);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+}
+
+.last-updated {
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-xl);
+  font-style: italic;
+}
+
+.privacy-section {
+  margin-bottom: var(--space-xl);
+}
+
+.privacy-section h2 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.privacy-section p {
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: var(--space-md);
+}
+
+.privacy-section ul {
+  list-style: disc;
+  margin-left: var(--space-xl);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+.privacy-section li {
+  margin-bottom: var(--space-sm);
+}
+
+.privacy-section strong {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+.privacy-section a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.privacy-section a:hover {
+  color: var(--color-primary-light);
+  text-decoration: underline;
+}
+
+/* Custom Scrollbar */
+.privacy-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.privacy-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-full);
+}
+
+.privacy-container::-webkit-scrollbar-thumb {
+  background: rgba(167, 99, 255, 0.3);
+  border-radius: var(--radius-full);
+}
+
+.privacy-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(167, 99, 255, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .privacy-container {
+    padding: var(--space-xl);
+    max-height: 95vh;
+  }
+
+  .privacy-content h1 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .privacy-section h2 {
+    font-size: var(--font-size-lg);
+  }
+
+  .privacy-content {
+    padding-right: 0;
+  }
+}

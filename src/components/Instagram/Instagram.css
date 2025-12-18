@@ -1,0 +1,107 @@
+/* ============================================
+   INSTAGRAM SECTION STYLES
+   ============================================ */
+
+.instagram-section {
+  background: linear-gradient(135deg, 
+    hsl(300, 95%, 30%) 0%, 
+    hsl(340, 95%, 45%) 50%,
+    hsl(25, 100%, 55%) 100%);
+  padding: var(--space-4xl) 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.instagram-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.instagram-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.instagram-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--space-xl);
+  color: white;
+  filter: drop-shadow(0 4px 20px rgba(255, 255, 255, 0.3));
+}
+
+.instagram-title {
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  color: white;
+  margin-bottom: var(--space-lg);
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.instagram-description {
+  font-size: var(--font-size-lg);
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: var(--space-2xl);
+  line-height: 1.6;
+}
+
+.instagram-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-lg) var(--space-2xl);
+  background: white;
+  color: hsl(300, 95%, 35%);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: all var(--transition-smooth);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.instagram-button:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.instagram-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .instagram-section {
+    padding: var(--space-3xl) 0;
+  }
+
+  .instagram-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .instagram-title {
+    font-size: var(--font-size-xl);
+  }
+
+  .instagram-description {
+    font-size: var(--font-size-base);
+  }
+
+  .instagram-button {
+    padding: var(--space-md) var(--space-xl);
+    font-size: var(--font-size-base);
+  }
+}
