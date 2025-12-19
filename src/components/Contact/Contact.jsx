@@ -74,8 +74,8 @@ function Contact() {
   return (
     <section id="contact" className="contact-section">
       <div className="container">
-        <h2 className="contact-title">Contact Hare Rama Events</h2>
-        <p className="contact-subtitle">
+        <h2 className="section-title contact-title">Contact Hare Rama Events</h2>
+        <p className="section-subtitle contact-subtitle">
           Complete the form below and let us bring your dream event to life.
         </p>
 

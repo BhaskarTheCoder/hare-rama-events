@@ -12,11 +12,11 @@ function Hero() {
 
       <div className="container hero-container">
         <div className="hero-content">
-          <h1 className="hero-title animate-fade-in">
+          <h1 className="section-title hero-title animate-fade-in">
             Welcome to Professional DJ & Event Production House
           </h1>
 
-          <p className="hero-subtitle animate-fade-in">
+          <p className="section-subtitle hero-subtitle animate-fade-in">
             Your Ultimate Destination for DJ, Lighting, Decor & Event Management Solutions
           </p>
 

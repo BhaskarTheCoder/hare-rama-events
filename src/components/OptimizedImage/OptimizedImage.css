@@ -1,0 +1,43 @@
+.optimized-image-container {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background: var(--color-dark-elevated);
+}
+
+.optimized-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.optimized-image.loaded {
+  opacity: 1;
+}
+
+.image-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--color-dark-elevated) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    var(--color-dark-elevated) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}

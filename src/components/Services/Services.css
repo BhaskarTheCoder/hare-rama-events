@@ -7,45 +7,12 @@
   padding: var(--space-4xl) 0;
 }
 
-.services-label {
-  text-align: center;
-  font-size: var(--font-size-sm);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: hsl(0, 0%, 60%);
-  margin-bottom: var(--space-md);
-}
-
-.services-title {
-  text-align: center;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  line-height: 1.2;
-  color: white;
-  margin-bottom: var(--space-md);
-}
-
+/* Service-specific title gradient styling */
 .services-title .gradient-text {
   background: linear-gradient(to right, hsl(260, 100%, 70%), hsl(280, 100%, 65%));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-
-.services-section .section-title {
-  text-align: center;
-  margin-bottom: var(--space-md);
-}
-
-.section-subtitle {
-  text-align: center;
-  font-size: var(--font-size-lg);
-  color: var(--color-text-secondary);
-  margin-bottom: var(--space-3xl);
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .services-grid {
@@ -62,6 +29,48 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
   transition: all var(--transition-smooth);
   cursor: pointer;
+  
+  /* Initial state for scroll animation */
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+}
+
+/* Scroll reveal animation */
+.service-card.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  animation: cardReveal 0.6s ease-out forwards;
+}
+
+@keyframes cardReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  50% {
+    transform: translateY(-4px) scale(1.02); /* Slight overshoot like hover */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Apply temporary hover-like effect after reveal */
+.service-card.visible {
+  animation: cardReveal 0.6s ease-out forwards, 
+             cardGlow 1.2s ease-in-out 0.6s; /* Glow effect starts after reveal */
+}
+
+@keyframes cardGlow {
+  0%, 100% {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+  50% {
+    box-shadow: 0 20px 40px rgba(167, 99, 255, 0.25);
+    border-color: rgba(167, 99, 255, 0.5);
+  }
 }
 
 .service-card:hover {
@@ -123,21 +132,12 @@
   padding: var(--space-xl);
 }
 
-.service-card-title {
-  font-size: var(--font-size-xl);
-  font-weight: 700;
-  margin-bottom: var(--space-sm);
+/* Service card-specific gradient styling for card titles */
+.service-card .card-title {
   background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-
-.service-card-description {
-  font-size: var(--font-size-base);
-  color: var(--color-text-secondary);
-  line-height: 1.6;
-  margin: 0;
 }
 
 /* Responsive */
@@ -160,5 +160,27 @@
 
   .service-card-content {
     padding: var(--space-lg);
+  }
+}
+
+/* Touch Devices - Always show View Details button */
+@media (hover: none) and (pointer: coarse) {
+  .service-overlay {
+    opacity: 1;
+  }
+  
+  .view-details {
+    animation: pulse 2s ease-in-out infinite;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.02);
   }
 }
