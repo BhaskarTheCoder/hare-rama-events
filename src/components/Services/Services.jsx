@@ -23,9 +23,12 @@ function Services() {
     <>
       <section id="inventory" className="section services-section">
         <div className="container">
-          <h2 className="section-title gradient-text">Our Services</h2>
+          <p className="services-label">OUR SERVICES</p>
+          <h2 className="section-title services-title">
+            Everything You Need for <span className="gradient-text">The Perfect Event</span>
+          </h2>
           <p className="section-subtitle">
-            Premium equipment and professional services for unforgettable events
+            Professional-grade equipment and expert services to make your celebration unforgettable
           </p>
           
           {/* Services Cards Grid */}

@@ -18,11 +18,11 @@ function Gallery() {
     <section className="section showcase-section">
       <div className="container">
         {/* Showcase Label */}
-        <div className="showcase-label">SHOWCASE</div>
+        <div className="section-label">SHOWCASE</div>
         
         {/* Large Heading */}
-        <h2 className="showcase-title">
-          See Our <span className="gradient-amazing">Amazing Work</span>
+        <h2 className="section-title">
+          See Our <span className="gradient-text">Amazing Work</span>
         </h2>
 
         {/* Tab Buttons */}
@@ -79,7 +79,7 @@ function Gallery() {
                 we've created. Get inspired for your next celebration!
               </p>
               <div className="instagram-actions">
-                <a href="https://instagram.com/yourusername" target="_blank" rel="noopener noreferrer" className="instagram-primary-btn">
+                <a href="https://www.instagram.com/hareramaevents_dj_ram/" target="_blank" rel="noopener noreferrer" className="instagram-primary-btn">
                   Visit Our Instagram Profile
                 </a>
                 <button className="instagram-secondary-btn">See More Events</button>

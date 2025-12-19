@@ -219,11 +219,7 @@
 /* Submit Button */
 .submit-button {
   padding: var(--space-md) var(--space-2xl);
-  background: linear-gradient(90deg, 
-    hsl(320, 100%, 65%) 0%,
-    hsl(280, 100%, 70%) 50%,
-    hsl(200, 100%, 65%) 100%
-  );
+  background: linear-gradient(to right, hsl(185, 95%, 45%), hsl(280, 95%, 60%), hsl(330, 100%, 65%));
   color: white !important;
   font-family: var(--font-heading);
   font-size: var(--font-size-lg);
@@ -232,12 +228,29 @@
   border-radius: var(--radius-full);
   cursor: pointer;
   transition: all var(--transition-smooth);
-  box-shadow: 0 4px 20px rgba(167, 99, 255, 0.4);
+  box-shadow: 0 4px 20px rgba(34, 211, 238, 0.4);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.submit-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, hsl(185, 95%, 50%), hsl(280, 95%, 65%), hsl(330, 100%, 70%));
+  opacity: 0;
+  transition: opacity 500ms ease;
+  z-index: -1;
+}
+
+.submit-button:hover:not(:disabled)::before {
+  opacity: 1;
 }
 
 .submit-button:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(167, 99, 255, 0.6);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 30px rgba(34, 211, 238, 0.6), 0 0 40px rgba(168, 85, 247, 0.4);
   color: white !important;
 }
 

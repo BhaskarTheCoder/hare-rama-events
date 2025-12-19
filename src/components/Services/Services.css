@@ -7,6 +7,32 @@
   padding: var(--space-4xl) 0;
 }
 
+.services-label {
+  text-align: center;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: hsl(0, 0%, 60%);
+  margin-bottom: var(--space-md);
+}
+
+.services-title {
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: white;
+  margin-bottom: var(--space-md);
+}
+
+.services-title .gradient-text {
+  background: linear-gradient(to right, hsl(260, 100%, 70%), hsl(280, 100%, 65%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .services-section .section-title {
   text-align: center;
   margin-bottom: var(--space-md);

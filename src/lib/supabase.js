@@ -1,6 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 
-// Supabase configuration
+// Supabase configuration - using environment variables
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
@@ -16,7 +16,6 @@ export const submitContactForm = async (formData) => {
         email: formData.email,
         phone: formData.phone,
         event_details: formData.event_details,
-        consent: formData.consent,
         submitted_at: formData.submitted_at
       }
     ])
