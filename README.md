@@ -213,7 +213,7 @@ This project is deployed on **Vercel** with automatic CI/CD:
 1. **Push to GitHub** - Code changes trigger automatic builds
 2. **Vercel Build** - Optimized production build
 3. **Deploy** - Instant deployment to global CDN
-4. **Live URL** - [hare-rama-events.vercel.app](https://hare-rama-events.vercel.app)
+4. **Live URL** - [hare-rama-events.vercel.app](https://hareramaevents.com/)
 
 ### Deploy Your Own
 
